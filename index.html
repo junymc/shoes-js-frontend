@@ -10,27 +10,47 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1>My love, shoes collection</h1>
-    <div id="new-shoe-container">
-      <form id="new-shoe-form">
-            Brand: <input type="text" name="shoe-brand" id="new-shoe-brand">
-            Model: <input type="text" name="shoe-model" id="new-shoe-model">
-            Size: <input type="text" name="shoe-size" id="new-shoe-size">
-            Color: <input type="text" name="shoe-color" id="new-shoe-color">
-            Type: <input type="text" name="shoe-type" id="new-shoe-type">
-            <input type="submit" value="Save">
-      </form>
-    </div>
-    <div id="shoes-content">
-      <ul id="shoes-container">
+  
+  <!-- Side navigation -->
+  <div class="sidenav">
+    <a href="#">Home</a>
+    <a href="#">Brand</a>
+  </div>
 
-      </ul>
-      <div id="shoe-show">
-
-      </div>
-    </div>
-
+  <!-- Page content -->
+  <div class="main">
+      <div class="container">
+          <h1>My love, shoes collection</h1>
+          <div id="new-shoe-container">
+            <form id="new-shoe-form">
+                  Brand: <input type="text" name="shoe-brand" id="new-shoe-brand">
+                  Model: <input type="text" name="shoe-model" id="new-shoe-model">
+                  Size: <input type="text" name="shoe-size" id="new-shoe-size">
+                  Color: <input type="text" name="shoe-color" id="new-shoe-color">
+                  Type:
+                  <select>
+                    <option value="boots">Boots</option>
+                    <option value="heels">Heels</option>
+                    <option value="sneakers">Sneakers</option>
+                    <option value="trainers">Trainers</option>
+                    <option value="sandals">Sandals</option>
+                    <option value="wedges">Wedges</option>
+                    <option value="flats">Flats</option>
+                  </select>
+                  <input type="submit" value="Save">
+            </form>
+          </div>
+          <div id="shoes-content">
+            <ul id="shoes-container">
+      
+            </ul>
+            <div id="shoe-show">
+      
+            </div>
+          </div>
+      
+        </div>
+ 
   </div>
 
 </body>
