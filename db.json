@@ -1,0 +1,35 @@
+"brands" : [
+
+    {
+        "id": 1,
+        "name": "Adidas"
+    },
+    {
+        "id": 2,
+        "name": "Nike"
+    },
+    {
+        "id": 3,
+        "name": "Vince Camuto"
+    },
+    {
+        "id": 4,
+        "name": "Jimmy Choo"
+    },
+    {
+        "id": 5,
+        "name": "Ugg"
+    },
+    {
+        "id": 6,
+        "name": "Christian Louboutin"
+    },
+    {
+        "id": 7,
+        "name": "Steve Madden"
+    },
+    {
+        "id": 8,
+        "name": "Tory Burch"
+    }
+]
