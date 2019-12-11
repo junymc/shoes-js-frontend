@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <script src="src/index.js"></script>
+  <script src="src/components/app.js"></script>
+  <script src="src/components/brand.js"></script>
+  <script src="src/components/shoe.js"></script>
   <title>Shoes App</title>
 </head>
 
@@ -19,25 +23,25 @@
 
   <!-- Page content -->
   <div class="main">
-      <div class="container">
-          <h1>My love, shoes collection</h1>
+      <div id="app-container">
+          <h1>My love, shoe collection</h1>
           <div id="new-shoe-container">
             <form id="new-shoe-form">
-                  Brand: <input type="text" name="shoe-brand" id="new-shoe-brand">
-                  Model: <input type="text" name="shoe-model" id="new-shoe-model">
-                  Size: <input type="text" name="shoe-size" id="new-shoe-size">
-                  Color: <input type="text" name="shoe-color" id="new-shoe-color">
-                  Type:
-                  <select>
-                    <option value="boots">Boots</option>
-                    <option value="heels">Heels</option>
-                    <option value="sneakers">Sneakers</option>
-                    <option value="trainers">Trainers</option>
-                    <option value="sandals">Sandals</option>
-                    <option value="wedges">Wedges</option>
-                    <option value="flats">Flats</option>
-                  </select>
-                  <input type="submit" value="Save">
+              Brand: <input type="text" name="shoe-brand" id="new-shoe-brand">
+              Model: <input type="text" name="shoe-model" id="new-shoe-model">
+              Size: <input type="text" name="shoe-size" id="new-shoe-size">
+              Color: <input type="text" name="shoe-color" id="new-shoe-color">
+              Type:
+                <select>
+                  <option value="boots">Boots</option>
+                  <option value="heels">Heels</option>
+                  <option value="sneakers">Sneakers</option>
+                  <option value="trainers">Trainers</option>
+                  <option value="sandals">Sandals</option>
+                  <option value="wedges">Wedges</option>
+                  <option value="flats">Flats</option>
+                </select>
+              <input type="submit" value="Save">
             </form>
           </div>
           <div id="shoes-content">
@@ -49,7 +53,7 @@
             </div>
           </div>
       
-        </div>
+      </div>
  
   </div>
 
