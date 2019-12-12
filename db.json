@@ -2,35 +2,43 @@
     "brands" : [
         {
             "id": 1,
-            "name": "Adidas"
+            "name": "Adidas",
+            "image": "https://www.reddit.com/r/70sdesign/comments/blec2k/adidas_logo_1971/"
         },
         {
             "id": 2,
-            "name": "Nike"
+            "name": "Nike",
+            "image": "https://www.pinterest.com/pin/752453050216142907/?lp=true"
         },
         {
             "id": 3,
-            "name": "Vince Camuto"
+            "name": "Vince Camuto",
+            "image": "https://www.pinterest.com/pin/575616396095483555/?lp=true"
         },
         {
             "id": 4,
-            "name": "Jimmy Choo"
+            "name": "Jimmy Choo",
+            "image": "https://opticarosadouro.pt/produto/jimmy-choo/"
         },
         {
             "id": 5,
-            "name": "Ugg"
+            "name": "Ugg",
+            "image": "https://www.visitportsmouth.co.uk/shopping/ugg-australia-outlet-p1391791"
         },
         {
             "id": 6,
-            "name": "Christian Louboutin"
+            "name": "Christian Louboutin",
+            "image": "https://www.pinterest.com/pin/29343835046609002/?lp=true"
         },
         {
             "id": 7,
-            "name": "Steve Madden"
+            "name": "Steve Madden",
+            "image": "https://www.pinterest.com/pin/194217802657726085/?lp=true"
         },
         {
             "id": 8,
-            "name": "Tory Burch"
+            "name": "Tory Burch",
+            "image": "https://www.westfield.com/centurycity/stores/all-stores/tory-burch/46295"
         }
     ]
 }
