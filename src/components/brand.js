@@ -1,13 +1,13 @@
 class Brand {
 
-    static addBrandLogo {
+    static addBrandLogo() {
         const brandLogo = document.querySelector('.brand-logo')
         const img = document.createElement('IMG')
-        img.setAttribute('src', toy.image)
+        img.setAttribute('src', brand.image)
         brandLogo.appendChild(img)
     } 
 
-    static async retrueveAll() {
+    static async retrieveAll() {
         try {
             const brandObjs = await BrandAdapter.instance.getBrands()
             return brandObjs.map(obj => new this(obj))
@@ -18,7 +18,7 @@ class Brand {
 
     }
 
-    constructor(name) {
+    constructor(name, image) {
         this.name = name
         this.image = image
     }
