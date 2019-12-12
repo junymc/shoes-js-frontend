@@ -1,8 +1,4 @@
 class Brand {
-    constructor(name) {
-        this.name = name
-    }
-
 
     static async retrueveAll() {
         try {
@@ -14,5 +10,12 @@ class Brand {
         }
 
     }
+
+    constructor(name) {
+        this.name = name
+        this.image = image
+    }
+
+
 
 }
