@@ -1,5 +1,12 @@
 class Brand {
 
+    static addBrandLogo {
+        const brandLogo = document.querySelector('.brand-logo')
+        const img = document.createElement('IMG')
+        img.setAttribute('src', toy.image)
+        brandLogo.appendChild(img)
+    } 
+
     static async retrueveAll() {
         try {
             const brandObjs = await BrandAdapter.instance.getBrands()
