@@ -3,42 +3,42 @@
         {
             "id": 1,
             "name": "Adidas",
-            "image": "https://www.reddit.com/r/70sdesign/comments/blec2k/adidas_logo_1971/"
+            "image": "https://i.redd.it/n66ho6y5bmw21.png"
         },
         {
             "id": 2,
             "name": "Nike",
-            "image": "https://www.pinterest.com/pin/752453050216142907/?lp=true"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Old_Nike_logo.jpg"
         },
         {
             "id": 3,
             "name": "Vince Camuto",
-            "image": "https://www.pinterest.com/pin/575616396095483555/?lp=true"
+            "image": "https://i.pinimg.com/originals/fd/ef/4f/fdef4f1adc6a5a1d5baf46f16f12e59b.jpg"
         },
         {
             "id": 4,
             "name": "Jimmy Choo",
-            "image": "https://opticarosadouro.pt/produto/jimmy-choo/"
+            "image": "http://www.cidasconsignment.com/wp-content/uploads/2013/07/o.1081.jpg"
         },
         {
             "id": 5,
             "name": "Ugg",
-            "image": "https://www.visitportsmouth.co.uk/shopping/ugg-australia-outlet-p1391791"
+            "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/ugg-logo.jpeg"
         },
         {
             "id": 6,
             "name": "Christian Louboutin",
-            "image": "https://www.pinterest.com/pin/29343835046609002/?lp=true"
+            "image": "https://i.pinimg.com/originals/35/81/8d/35818d78d5369b70ecaa77c6be6abdeb.jpg"
         },
         {
             "id": 7,
             "name": "Steve Madden",
-            "image": "https://www.pinterest.com/pin/194217802657726085/?lp=true"
+            "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/Steve-madden-Logo.jpg"
         },
         {
             "id": 8,
             "name": "Tory Burch",
-            "image": "https://www.westfield.com/centurycity/stores/all-stores/tory-burch/46295"
+            "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/Tory-Burch-Logo.jpg"
         }
     ]
 }
