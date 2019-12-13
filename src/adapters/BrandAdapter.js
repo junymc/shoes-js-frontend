@@ -1,8 +1,5 @@
 class BrandAdapter {
 
-        constructor() {
-            
-        }
 
         get baseURL() {
             return  `http://localhost:3000`
@@ -21,7 +18,7 @@ class BrandAdapter {
                 'Content-Type': 'appliaction/json',
                 'Accept': 'application/json'
             }
-            
+            return stdHeader
         }
 
         async getBrands() {

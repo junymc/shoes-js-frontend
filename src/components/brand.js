@@ -3,23 +3,22 @@ class Brand {
 
     static async retrieveAll() {
         try {
-            const brandObjs = await BrandAdapter.instance.getBrands()
+            const brandObjs = await new BrandAdapter().getBrands()
             return brandObjs.map(obj => new this(obj))
         }catch(err){
-            alert(`The request failed with ${err}`)
-            return null
+            throw {error: err}
         }
 
     }
 
     constructor(params) {
+        this.id = params.id
         this.name = params.name
         this.image = params.image
-        this.id = params.id
     }
 
     get html() {
-        return `<img src="${this.image}>`
+        return `<img src="${this.image}" width="120" height="150">`
     }
 
 

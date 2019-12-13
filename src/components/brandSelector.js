@@ -12,8 +12,14 @@ class BrandSelector {
     }
 
     async fetchAndLoadBrands() {
-        this.brands = await Brand.retrieveAll()
-        this.render()
+        
+        try {
+            this.brands = await Brand.retrieveAll()
+            this.render()
+        }catch(err) {
+            alert(err)
+        }
+        
     }
 
     render() {
