@@ -1,22 +1,7 @@
-const BrandAdapter = (function(){
-
-    let instance = null
-
-    return class {
-
-        static get instance() {
-            if(instance === null) { instance = new this()}
-            return instance
-        }
+class BrandAdapter {
 
         constructor() {
-            if(instance  !== null){
-                return instance
-            }else{
-                this.token = null
-                instance = this
-                return instance
-            }
+            
         }
 
         get baseURL() {
@@ -36,14 +21,7 @@ const BrandAdapter = (function(){
                 'Content-Type': 'appliaction/json',
                 'Accept': 'application/json'
             }
-            if(this.token === null){
-                return stdHeader
-            }
-
-            return {
-                ... stdHeader,
-                'Authorization': `Bearer ${this.token}`
-            }
+            
         }
 
         async getBrands() {
@@ -70,13 +48,9 @@ const BrandAdapter = (function(){
             })
         }
 
-
         checkStatus(res) {
             if(res.status > 299 || res.status < 200) {
                 throw new Error(res.status)
             }
         }
     }
-
-
-})()

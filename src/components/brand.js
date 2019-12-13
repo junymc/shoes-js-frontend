@@ -1,11 +1,5 @@
 class Brand {
 
-    static addBrandLogo() {
-        const brandLogo = document.querySelector('.brand-logo')
-        const img = document.createElement('IMG')
-        img.setAttribute('src', brand.image)
-        brandLogo.appendChild(img)
-    } 
 
     static async retrieveAll() {
         try {
@@ -18,9 +12,14 @@ class Brand {
 
     }
 
-    constructor(name, image) {
-        this.name = name
-        this.image = image
+    constructor(params) {
+        this.name = params.name
+        this.image = params.image
+        this.id = params.id
+    }
+
+    get html() {
+        return `<img src="${this.image}>`
     }
 
 
