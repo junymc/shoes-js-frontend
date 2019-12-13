@@ -1,16 +1,23 @@
 
 body {
-  background: rgba(229, 229, 231, 0.973)
+  background: rgba(253, 223, 179, 0.973)
 
 }
 
 img {
   box-sizing: border-box;
-  border: 1px solid rgb(58, 58, 59);
+  border: 1px solid rgb(185, 185, 187);
 }
 
 #all-brands{
   overflow-y: scroll;
   overflow-x: auto;
   white-space: nowrap;
+}
+
+h1 {
+  font-family: 'Baskervville', serif;
+  color: rgb(94, 92, 92);
+  font-size: 40px;
+  text-transform: uppercase;
 }
