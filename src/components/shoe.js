@@ -1,8 +1,9 @@
 class Shoe {
-    constructor(model, size, color, type) {
-        this.model = model
-        this.size = size
-        this.color = color
-        this.type = type
+    constructor(params) {
+        this.id = params.id
+        this.model = params.model
+        this.size = params.size
+        this.color = params.color
+        this.type = params.type
     }
 }

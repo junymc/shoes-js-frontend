@@ -3,6 +3,7 @@ class BrandSelector {
         this.brands = []
         this.bindingsAndEventListeners()
         this.fetchAndLoadBrands()
+        this.shoeDisplayEventListener()
     }
 
 
@@ -24,6 +25,14 @@ class BrandSelector {
 
     render() {
         this.allBrandsContainer.innerHTML = this.brands.map(brand => brand.html).join('')
+    }
+
+    shoeDisplayEventListener() {
+        for(var i = 0; i < this.allBrandsContainer.length; i += 1){
+            this.allBrandsContainer[i].addEventListener('click', function () {
+                
+            });
+            }
     }
 
 }
