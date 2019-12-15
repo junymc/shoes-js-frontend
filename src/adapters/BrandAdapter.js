@@ -9,7 +9,7 @@ class BrandAdapter {
             return `${this.baseURL}/brands`
         }
 
-        get brandURL(id) {
+        brandURL(id) {
             return `${this.brandsURL}/${id}`
         }
 

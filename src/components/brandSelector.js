@@ -3,13 +3,19 @@ class BrandSelector {
         this.brands = []
         this.bindingsAndEventListeners()
         this.fetchAndLoadBrands()
-        this.shoeDisplayEventListener()
+
     }
 
 
     bindingsAndEventListeners() {
         this.container = document.querySelector('#brand-container')
-        this.allBrandsContainer = document.querySelector("#all-brands")
+        this.allBrandsContainer = document.getElementById("all-brands")
+
+        this.allBrandsContainer.addEventListener('click', this.selectBrandLogo.bind(this))
+    }
+
+    selectBrandLogo(e) {
+        renderShoes()
     }
 
     async fetchAndLoadBrands() {
@@ -27,12 +33,5 @@ class BrandSelector {
         this.allBrandsContainer.innerHTML = this.brands.map(brand => brand.html).join('')
     }
 
-    shoeDisplayEventListener() {
-        for(var i = 0; i < this.allBrandsContainer.length; i += 1){
-            this.allBrandsContainer[i].addEventListener('click', function () {
-                
-            });
-            }
-    }
 
 }
