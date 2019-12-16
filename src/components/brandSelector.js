@@ -3,7 +3,7 @@ class BrandSelector {
         this.brands = []
         this.bindingsAndEventListeners()
         this.fetchAndLoadBrands()
-        // this.selectedBrand = null
+        this.selectedBrand = null
     }
 
 
@@ -15,7 +15,9 @@ class BrandSelector {
     }
 
     selectBrandLogo(e) {
-        // renderShoes()
+        // e.target.dataset.id = brand
+
+        handleSelection(brand)
         // if(e.target.id === )
     }
 

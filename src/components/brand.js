@@ -18,7 +18,7 @@ class Brand {
     }
 
     get html() {
-        return `<img src="${this.image}" width="120" height="150">`
+        return `<img src="${this.image}" data-id="${this.id}" width="120" height="150">`
     }
 
 
