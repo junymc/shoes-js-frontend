@@ -6,4 +6,8 @@ class Shoe {
         this.color = params.color
         this.type = params.type
     }
+
+    get shoesHtml() {
+        return `<p> "${this.shoe.name}" </p>`
+    }
 }
