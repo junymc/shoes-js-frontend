@@ -13,8 +13,8 @@ class ShoeAdapter {
         return `${this.brandsURL}/${id}`
     }
 
-    get shoesURL() {
-        return `${this.brandURL}/shoes`
+    shoesURL(brand_id) {
+        return `${this.brandURL(brand_id)}/shoes`
     }
 
     get hearder() {
@@ -25,8 +25,8 @@ class ShoeAdapter {
         return stdHeader
     }
 
-    async getShoes() {
-        const res = await fetch(this.shoesURL)
+    async getShoes(brand_id) {
+        const res = await fetch(this.shoesURL(brand_id))
         this.checkStatus(res)
         return await res.json()
     }

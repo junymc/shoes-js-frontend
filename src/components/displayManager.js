@@ -10,7 +10,7 @@ class DisplayManager {
     async fetchAndLoadShoes() {
         
         try {
-            this.shoes = await Shoe.retrieveAll()
+            this.shoes = await Shoe.retrieveByBrand(brandId)
             this.renderShoes()
         }catch(err) {
             alert(err)

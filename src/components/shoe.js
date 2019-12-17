@@ -6,13 +6,14 @@ class Shoe {
         this.size = params.size
         this.color = params.color
         this.category = params.category
+        this.brand_id = params.brand_id
         
         this.bindingsAndEventListeners()
     }
 
-    static async retrieveAll() {
+    static async retrieveByBrand(brandId) {
         try {
-            const shoeObjs = await new ShoeAdapter().getShoes()
+            const shoeObjs = await new ShoeAdapter().getShoes(brandId)
             return shoeObjs.map(obj => new this(obj))
         }catch(err){
             throw {error: err}
