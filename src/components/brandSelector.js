@@ -15,10 +15,11 @@ class BrandSelector {
     }
 
     selectBrandLogo(e) {
-        // e.target.dataset.id = brand
+        const id = parseInt(e.target.dataset.id)
+        const selection = this.brands.find(brand => brand.id === id)
 
-        handleSelection(brand)
-        // if(e.target.id === )
+        console.log(selection)
+        this.handleBrand(selection)
     }
 
     async fetchAndLoadBrands() {
