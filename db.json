@@ -39,6 +39,41 @@
             "id": 8,
             "name": "Tory Burch",
             "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/Tory-Burch-Logo.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Aldo",
+            "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/aldo-Logo.jpg"
+        },
+        {
+            "id": 10,
+            "name": "New Balance",
+            "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/new-balance-Logo.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Toms",
+            "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/toms-Logo.png"
+        },
+        {
+            "id": 12,
+            "name": "Converse",
+            "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/converse-Logo.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Gucci",
+            "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/gucci-logo.jpg"
+        },
+        {
+            "id": 14,
+            "name": "Nine West",
+            "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/ninewest-logo.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Michael Kors",
+            "image": "/Users/Juny/Development/code/projects/js_project/shoes-js-frontend/styles/images/mk-logo.jpg"
         }
     ],
 
