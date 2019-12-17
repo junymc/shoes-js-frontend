@@ -1,47 +1,57 @@
-// class ShoeAdapter {
+class ShoeAdapter {
 
 
-//     get baseURL() {
-//         return  `http://localhost:3000`
-//     }
+    get baseURL() {
+        return  `http://localhost:3000/api/v1`
+    }
 
-//     get shoesURL(brands, id) {
-//         return `${this.baseURL}/${brands}/${id}/shoes`
-//     }
+    get brandsURL() {
+        return `${this.baseURL}/brands`
+    }
 
-//     shoeURL(id) {
-//         return `${this.shoesURL}/${id}`
-//     }
+    brandURL(id) {
+        return `${this.brandsURL}/${id}`
+    }
 
-//     get hearder() {
-//         const stdHeader = {
-//             'Content-Type': 'appliaction/json',
-//             'Accept': 'application/json'
-//         }
-//         return stdHeader
-//     }
+    get shoesURL() {
+        return `${this.brandURL}/shoes`
+    }
 
-//     async getShoes() {
-//         const res = await fetch(this.shoesURL)
-//         this.checkStatus(res)
-//         return await res.json()
-//     }
+    get hearder() {
+        const stdHeader = {
+            'Content-Type': 'appliaction/json',
+            'Accept': 'application/json'
+        }
+        return stdHeader
+    }
 
-//     async getshoe(id) {
-//         const res = await fetch(this.shoeURL(id))
-//         this.checkStatus(res)
-//         return await res.json()
-//     }
+    async getShoes() {
+        const res = await fetch(this.shoesURL)
+        this.checkStatus(res)
+        return await res.json()
+    }
 
-//     async newShoe(params) {
-//         const res = await fetch(this.shoesURL,{
-//             method: 'POST',
-//             headers: this.headers,
-//             body: JSON.stringify(params)
-//         })
-//         this.checkStatus(res)
-//         return await res.json({
-//             "name": brand.shoe.name.value
-//         })
-//     }
-// }
+    // async getshoe(id) {
+    //     const res = await fetch(this.shoeURL(id))
+    //     this.checkStatus(res)
+    //     return await res.json()
+    // }
+
+    async newShoe(params) {
+        const res = await fetch(this.shoesURL,{
+            method: 'POST',
+            headers: this.headers,
+            body: JSON.stringify(params)
+        })
+        this.checkStatus(res)
+        return await res.json({
+            "name": brand.shoe.name.value
+        })
+    }
+
+    checkStatus(res) {
+        if(res.status > 299 || res.status < 200) {
+            throw new Error(res.status)
+        }
+    }
+}

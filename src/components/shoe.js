@@ -10,6 +10,16 @@ class Shoe {
         this.bindingsAndEventListeners()
     }
 
+    static async retrieveAll() {
+        try {
+            const shoeObjs = await new ShoeAdapter().getShoes()
+            return shoeObjs.map(obj => new this(obj))
+        }catch(err){
+            throw {error: err}
+        }
+
+    }
+
     bindingsAndEventListeners() {
         this.container = document.querySelector("#shoes-container")
     }
