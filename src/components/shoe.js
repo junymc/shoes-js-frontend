@@ -5,7 +5,7 @@ class Shoe {
         this.model = params.model
         this.size = params.size
         this.color = params.color
-        this.type = params.type
+        this.category = params.category
         
         this.bindingsAndEventListeners()
     }
