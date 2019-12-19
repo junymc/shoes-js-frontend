@@ -10,6 +10,8 @@ class DisplayManager {
     async fetchAndLoadShoes() {
         
         try {
+            console.log(selectedBrand)
+            const brandId = this.selectedBrand.id
             this.shoes = await Shoe.retrieveByBrand(brandId)
             this.renderShoes()
         }catch(err) {

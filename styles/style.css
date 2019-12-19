@@ -7,6 +7,7 @@ body {
 img {
   box-sizing: border-box;
   border: 1px solid rgb(185, 185, 187);
+  filter: invert(0%);
 }
 
 #all-brands{
