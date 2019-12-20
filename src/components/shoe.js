@@ -1,6 +1,5 @@
 class Shoe {
     constructor(params) {
-        this.shoes = []
         this.id = params.id
         this.model = params.model
         this.size = params.size
@@ -26,6 +25,6 @@ class Shoe {
     }
 
     get shoesHtml() {
-        return `<p> "${this.shoe.name}" </p>`
+        return `<p> "${this.model}" </p>`
     }
 }

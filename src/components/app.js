@@ -8,7 +8,11 @@ class App {
     }
 
     handleSelection(brand) {
-        this.displayManager.selectedBrand = brand
-        this.displayManager.renderShoes()
+        if(!brand){
+            this.displayManager.clearShoes()
+        }else {
+            this.displayManager.selectedBrand = brand
+            this.displayManager.fetchAndRenderShoes()
+        }
     }
 }
