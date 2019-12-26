@@ -45,7 +45,11 @@ class ShoeAdapter {
         })
         this.checkStatus(res)
         return await res.json({
-            "name": brand.shoe.name.value
+            "brand": brand.name.value,
+            "model": brand.shoe.model.value,
+            "size": brand.shoe.size.value,
+            "color": brand.shoe.color.value,
+            "category": brand.shoe.category.value
         })
     }
 
