@@ -10,9 +10,10 @@ class FormManager {
     }
 
     createShoe(e) {
-        console.log(this)
         e.preventDefault()
-        console.log("shoe is being created!")
+        const inputs = Array.from(e.target.querySelectorAll('input'))
+        const [brand, model, size, color, category] = inputs.map(input => input.value)
+        console.log(brand, model, size, color, category)
     }
 
 }
