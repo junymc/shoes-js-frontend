@@ -16,6 +16,7 @@ class BrandSelector {
     }
 
     selectBrandLogo(e) {
+        e.preventDefault()
         // update this.selectedBrand
         if(e.target.tagName === 'IMG'){
             const id = parseInt(e.target.dataset.id)
