@@ -15,9 +15,11 @@ class FormManager {
         const brandOption = document.querySelector('#shoe-brand-name').value
         const [model, size, color] = inputs.map(input => input.value)
         const categoryOption = document.querySelector('#new-shoe-category').value
+        const shoeImage = document.querySelector('#new-shoe-image').value
         
         // create elements
         const ul = document.createElement('ul')
+        const imgTag = document.createElement('img')
         const shoeInfo1 = document.createElement('li')
         const shoeInfo2 = document.createElement('li')
         const shoeInfo3 = document.createElement('li')
@@ -25,11 +27,13 @@ class FormManager {
 
         // add content
         deleteBtn.textContent = 'Delete'
+        imgTag.textContent = shoeImage
         shoeInfo1.textContent = brandOption
         shoeInfo2.textContent = [model, size, color]
         shoeInfo3.textContent = categoryOption
 
         // append to document
+        ul.appendChild(imgTag)
         ul.appendChild(shoeInfo1)
         ul.appendChild(shoeInfo2)
         ul.appendChild(shoeInfo3)
