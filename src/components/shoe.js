@@ -26,6 +26,7 @@ class Shoe {
 
     get shoesHtml() {
         return `<ul>
+                   <img src="${this.image}" width="120" height="150">
                    <li> ${this.model} </li>
                    <li> ${this.size} </li>
                    <li> ${this.color} </li>
