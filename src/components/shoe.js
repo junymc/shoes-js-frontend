@@ -25,6 +25,12 @@ class Shoe {
     }
 
     get shoesHtml() {
-        return `<p> "${this.model}" </p>`
+        return `<ul>
+                   <li> ${this.model} </li>
+                   <li> ${this.size} </li>
+                   <li> ${this.color} </li>
+                   <li> ${this.category} </li>
+                   <button type="submit" class="btn btn-primary">Delete</button>
+                </ul>`
     }
 }
