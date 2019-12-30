@@ -3,7 +3,7 @@ class App {
         this.container = container
         this.brandSeletor = new BrandSelector()
         this.brandSeletor.handleBrand = this.handleSelection.bind(this)
-        this.formManager = new FormManager()
+        // this.formManager = new FormManager()
         this.displayManager = new DisplayManager()
     }
 

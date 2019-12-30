@@ -29,8 +29,18 @@ img {
 h1 {
   font-family: 'Poiret One', cursive;
   color: rgb(27, 27, 27);
-  font-size: 50px;
-  /* text-transform: uppercase; */
+  font-size: 45px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  margin: 0;
+  padding: 0;
 }
 
 .banner {
@@ -40,6 +50,7 @@ h1 {
   text-align: center;
   background: #ffffff;
   color: rgb(15, 15, 15);
+  border-spacing: 10px;
 }
 
 button {
@@ -61,4 +72,8 @@ button:hover {
     border: 1px solid rgb(250, 247, 249);
     background-color: rgb(248, 169, 176);
     color: #faf9f9;
+}
+
+h3 {
+
 }

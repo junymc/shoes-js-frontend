@@ -21,7 +21,12 @@
 
 <body>
   <div id="app-container">
-    <h1 class="banner">My Love, Shoe Collection</h1>
+    <div class="banner">
+      <section>
+        <h1>My Shoe Collection</h1>
+        <p>A look into a couture closet</p>
+      </section>
+    </div>
     <div id="brand-container">
       <div id="all-brands">
 
@@ -30,8 +35,9 @@
     <br>
     <div id="new-shoe-container">
       <form id="new-shoe-form">
+        <h3>Add a new shoe</h3>
         Brand:
-          <select name="brandlist" id="shoe-brand-name" form="new-shoe-form">
+          <select name="brand" id="shoe-brand-name" form="new-shoe-form">
             <option value="Adidas">Adidas</option>
             <option value="Nike">Nike</option>
             <option value="Vince-camuto">Vince Camuto</option>
@@ -48,11 +54,11 @@
             <option value="Nine-west">Nine West</option>
             <option value="Michael-Kors">Michael Kors</option>
           </select>
-        Model: <input type="text" name="shoe-model" id="new-shoe-model">
-        Size: <input type="text" name="shoe-size" id="new-shoe-size">
-        Color: <input type="text" name="shoe-color" id="new-shoe-color">
+        Model: <input type="text" name="model" id="new-shoe-model">
+        Size: <input type="text" name="size" id="new-shoe-size">
+        Color: <input type="text" name="color" id="new-shoe-color">
         Category:
-          <select name="categorylist" id="new-shoe-category" form="new-shoe-form">
+          <select name="category" id="new-shoe-category" form="new-shoe-form">
             <option value="Boots">Boots</option>
             <option value="Heels">Heels</option>
             <option value="Sneakers">Sneakers</option>
@@ -61,7 +67,7 @@
             <option value="Wedges">Wedges</option>
             <option value="Flats">Flats</option>
           </select>
-        Image: <input type="text" name="shoe-image" id="new-shoe-image">
+        Image: <input type="text" name="image" id="new-shoe-image">
         <button type="submit" class="btn btn-primary">Save</button>
           </form>
     <br>

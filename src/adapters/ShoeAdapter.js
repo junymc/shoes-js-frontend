@@ -39,14 +39,19 @@ class ShoeAdapter {
     // }
 
     async newShoe(params) {
+
+        try {
+            const res = await fetch(this.shoesURL,{
+                method: 'POST',
+                headers: this.headers,
+                body: JSON.stringify(params)
+            })
+            this.checkStatus(res)
+            return await res.json()
+        }catch(err) {
+           alert(err)
+        }
         
-        const res = await fetch(this.shoesURL,{
-            method: 'POST',
-            headers: this.headers,
-            body: JSON.stringify(params)
-        })
-        this.checkStatus(res)
-        return await res.json()
     }
 
     checkStatus(res) {

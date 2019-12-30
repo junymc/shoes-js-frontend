@@ -21,6 +21,15 @@ class Shoe {
 
     }
 
+    static async retrieveNewShoe(params) {
+        try {
+            const shoeObj = await new ShoeAdapter().newShoe(params)
+            return shoeObj
+        }catch(err){
+            throw {error: err}
+        }
+    }
+
     bindingsAndEventListeners() {
         this.container = document.querySelector("#shoes-container")
     }
