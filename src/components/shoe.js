@@ -27,11 +27,11 @@ class Shoe {
 
     get shoesHtml() {
         return `<ul>
-                   <img src="${this.image}" width="130" height="150">
-                   <li> ${this.model} </li>
-                   <li> ${this.size} </li>
-                   <li> ${this.color} </li>
-                   <li> ${this.category} </li>
+                   <img src="${this.image}" width="250" height="300">
+                   <li> Model: ${this.model} </li>
+                   <li> Size: ${this.size} </li>
+                   <li> Color: ${this.color} </li>
+                   <li> Category: ${this.category} </li>
                    <button type="submit" class="delete">Delete</button>
                 </ul>`
     }
