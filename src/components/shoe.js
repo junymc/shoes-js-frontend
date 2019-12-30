@@ -5,6 +5,7 @@ class Shoe {
         this.size = params.size
         this.color = params.color
         this.category = params.category
+        this.image = params.image
         this.brand_id = params.brand_id
         
         this.bindingsAndEventListeners()
@@ -31,7 +32,7 @@ class Shoe {
                    <li> ${this.size} </li>
                    <li> ${this.color} </li>
                    <li> ${this.category} </li>
-                   <button type="submit" class="btn btn-primary">Delete</button>
+                   <button type="submit" class="delete">Delete</button>
                 </ul>`
     }
 }

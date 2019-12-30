@@ -40,9 +40,7 @@ class BrandAdapter {
                 body: JSON.stringify(params)
             })
             this.checkStatus(res)
-            return await res.json({
-                "name": brand.name.value
-            })
+            return await res.json()
         }
 
         checkStatus(res) {

@@ -26,6 +26,7 @@ class ShoeAdapter {
     }
 
     async getShoes(brand_id) {
+        console.log(this.shoesURL(brand_id))
         const res = await fetch(this.shoesURL(brand_id))
         this.checkStatus(res)
         return await res.json()
@@ -38,19 +39,14 @@ class ShoeAdapter {
     // }
 
     async newShoe(params) {
+        
         const res = await fetch(this.shoesURL,{
             method: 'POST',
             headers: this.headers,
             body: JSON.stringify(params)
         })
         this.checkStatus(res)
-        return await res.json({
-            "brand": brand.name.value,
-            "model": brand.shoe.model.value,
-            "size": brand.shoe.size.value,
-            "color": brand.shoe.color.value,
-            "category": brand.shoe.category.value
-        })
+        return await res.json()
     }
 
     checkStatus(res) {

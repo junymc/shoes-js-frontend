@@ -7,6 +7,12 @@ class FormManager {
         this.shoesContainer = document.getElementById('shoes-container')
         this.shoeForm = document.getElementById('new-shoe-form')
         this.shoeForm.addEventListener('submit', this.addShoe.bind(this))
+
+        this.deleteBtns = document.querySelectorAll('.delete')
+        Array.from(this.deleteBtns).forEach(function(btn){
+            btn.addEventListener('click', this.deleteShoe.bind(this))
+        })
+        
     }
 
     addShoe(e) {
@@ -20,27 +26,38 @@ class FormManager {
         // create elements
         const ul = document.createElement('ul')
         const imgTag = document.createElement('img')
-        const shoeInfo1 = document.createElement('li')
-        const shoeInfo2 = document.createElement('li')
-        const shoeInfo3 = document.createElement('li')
+        const brandLi = document.createElement('li')
+        const modelLi = document.createElement('li')
+        const sizeLi = document.createElement('li')
+        const colorLi = document.createElement('li')
+        const categoryLi = document.createElement('li')
         const deleteBtn = document.createElement('button')
 
         // add content
         deleteBtn.textContent = 'Delete'
-        imgTag.textContent = shoeImage
-        shoeInfo1.textContent = brandOption
-        shoeInfo2.textContent = [model, size, color]
-        shoeInfo3.textContent = categoryOption
+        deleteBtn.className = 'delete'
+        imgTag.src = shoeImage
+        brandLi.textContent = brandOption
+        modelLi.textContent = model
+        sizeLi.textContent = size
+        colorLi.textContent = color
+        categoryLi.textContent = categoryOption
 
         // append to document
         ul.appendChild(imgTag)
-        ul.appendChild(shoeInfo1)
-        ul.appendChild(shoeInfo2)
-        ul.appendChild(shoeInfo3)
+        ul.appendChild(brandLi)
+        ul.appendChild(modelLi)
+        ul.appendChild(sizeLi)
+        ul.appendChild(colorLi)
+        ul.appendChild(categoryLi)
         ul.appendChild(deleteBtn)
         this.shoesContainer.appendChild(ul)
-
        
+    }
+
+    deleteShoe(e) {
+        e.preventDefault()
+        console.log('deleted!')
     }
 
 }
