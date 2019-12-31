@@ -7,8 +7,6 @@ class Shoe {
         this.category = params.category
         this.image = params.image
         this.brand_id = params.brand_id
-       
-        this.bindingsAndEventListeners()
     }
 
     static async retrieveByBrand(brandId) {
@@ -23,10 +21,6 @@ class Shoe {
     static async createNewShoe(params) {
         const shoeObj = await new ShoeAdapter().newShoe(params)
         return shoeObj
-    }
-
-    bindingsAndEventListeners() {
-        this.container = document.querySelector("#shoes-container")
     }
 
     get shoesHtml() {

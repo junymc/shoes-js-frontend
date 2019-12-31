@@ -28,6 +28,7 @@ class DisplayManager {
         const shoesIndex = document.querySelector("#shoes-container")
         console.log(this.shoes)
         shoesIndex.innerHTML = this.shoes.map(shoe => shoe.shoesHtml).join('')
+        this.deleteShoeEventListener()
     }
 
     clearShoes(){
@@ -40,10 +41,7 @@ class DisplayManager {
         this.shoeForm = document.getElementById('new-shoe-form')
         this.shoeForm.addEventListener('submit', this.addShoe.bind(this))
 
-        // this.deleteBtns = document.querySelectorAll('.delete')
-        // Array.from(this.deleteBtns).forEach(function(btn){
-        //     btn.addEventListener('click', this.deleteShoe.bind(this))
-        // })
+        
     }
 
     // get the info from form and convert it to object format
@@ -69,7 +67,7 @@ class DisplayManager {
         // Create a new Shoe() from the form info
         const newShoe = new Shoe(shoeJson)
         // add the shoe in the shoes array
-         this.shoes.push(newShoe)
+        this.shoes.push(newShoe)
         // render shoes to display
         this.renderShoes()
         // POST request to API
@@ -82,6 +80,17 @@ class DisplayManager {
             alert(err)
             this.renderShoes()
         }   
+    }
+
+    deleteShoeEventListener() {
+        this.deleteBtns = document.querySelectorAll('#shoes-container .delete')
+        Array.from(this.deleteBtns).forEach(function(btn){
+            btn.addEventListener('click', (e) => {
+                console.log(e.target.parentElement)
+                const ul = e.target.parentElement
+                ul.parentNode.removeChild(ul)
+            })
+        })
     }
     
 }

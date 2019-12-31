@@ -17,6 +17,10 @@ class ShoeAdapter {
         return `${this.brandURL(brand_id)}/shoes`
     }
 
+    shoeURL(brand_id, shoe_id) {
+        return `${this.brandURL(brand_id)}/shoes/${shoe_id}`
+    }
+
     get headers() {
         const stdHeader = {
             'Content-Type': 'application/json',
@@ -46,6 +50,21 @@ class ShoeAdapter {
            alert(err)
         }
 
+    }
+
+    async deleteShoe(params) {
+
+        try{
+            const res = await fetch(this.shoeURL(params.brand_id, params.id),{
+                method: 'DELETE',
+                headers: this.headers,
+                body: JSON.stringify({shoes: params})
+            })
+            this.checkStatus(res)
+            return await res.json()
+        }catch(err) {
+            alert(err)
+        }
     }
 
     checkStatus(res) {
