@@ -7,7 +7,7 @@ class Shoe {
         this.category = params.category
         this.image = params.image
         this.brand_id = params.brand_id
-        
+       
         this.bindingsAndEventListeners()
     }
 
@@ -21,13 +21,11 @@ class Shoe {
 
     }
 
-    static async retrieveNewShoe(params) {
-        try {
-            const shoeObj = await new ShoeAdapter().newShoe(params)
-            return shoeObj
-        }catch(err){
-            throw {error: err}
-        }
+    static async createNewShoe(params) {
+
+        const shoeObj = await new ShoeAdapter().newShoe(params)
+        return shoeObj
+       
     }
 
     bindingsAndEventListeners() {

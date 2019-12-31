@@ -21,6 +21,10 @@ class Brand {
         return `<img src="${this.image}" data-id="${this.id}" width="120" height="150">`
     }
 
+    get optionHTML() {
+        return `<option value="${this.id}">${this.name}</option>`
+    }
+
 
 
 }

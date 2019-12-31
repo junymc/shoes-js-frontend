@@ -1,10 +1,24 @@
 class App {
     constructor(container) {
         this.container = container
-        this.brandSeletor = new BrandSelector()
-        this.brandSeletor.handleBrand = this.handleSelection.bind(this)
-        // this.formManager = new FormManager()
+        this.brandSelector = new BrandSelector()
+        this.brandSelector.handleBrand = this.handleSelection.bind(this)
         this.displayManager = new DisplayManager()
+        this.fetchAndLoadBrands()
+    }
+
+    async fetchAndLoadBrands() {
+        
+        // try {
+            const brands = await Brand.retrieveAll()
+            this.brandSelector.brands = brands
+            this.displayManager.brands = brands
+            this.brandSelector.render()
+            this.displayManager.updateFormBrands()
+        // }catch(err) {
+        //     alert(err)
+        // }
+        
     }
 
     handleSelection(brand) {
@@ -15,4 +29,5 @@ class App {
             this.displayManager.fetchAndRenderShoes()
         }
     }
+
 }

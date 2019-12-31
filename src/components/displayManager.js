@@ -19,25 +19,18 @@ class DisplayManager {
         
     }
 
-    // async fetchAndRenderNewShoe() {
-
-    //     try {
-    //         console.log(this.selectedBrand)
-    //         const brandId = this.selectedBrand.id
-    //         this.shoe = await Shoe.retrieveNewShoe(params)
-    //         this.shoes.push(this.shoe)
-    //         this.renderShoes()
-    //     }catch(err) {
-    //         alert(err)
-    //     }
-
-    // }
+    updateFormBrands() {
+        const brandSelector = document.querySelector("#shoe-brand-name")
+        brandSelector.innerHTML = this.brands.map(brand => brand.optionHTML).join('')
+    }
 
     renderShoes() {
         const shoesIndex = document.querySelector("#shoes-container")
         const brandName = document.createElement('h2')
-        const t = document.createTextNode(`${this.selectedBrand.name}`)
-        brandName.appendChild(t)
+        if(this.selectedBrand){
+           const t = document.createTextNode(this.selectedBrand.name)
+           brandName.appendChild(t)
+        }
         console.log(this.shoes)
         shoesIndex.innerHTML = this.shoes.map(shoe => shoe.shoesHtml).join('')
 
@@ -50,10 +43,9 @@ class DisplayManager {
     }
 
     bindingsAndEventListeners() {
-        // this.shoesContainer = document.getElementById('shoes-container')
         
         this.shoeForm = document.getElementById('new-shoe-form')
-        this.shoeForm.addEventListener('submit', this.addShoe)
+        this.shoeForm.addEventListener('submit', this.addShoe.bind(this))
 
 
         // this.deleteBtns = document.querySelectorAll('.delete')
@@ -62,7 +54,7 @@ class DisplayManager {
         // })
         
     }
-
+    // get the info from form and convert it to object format
     toJSONString() {
         const shoeInfo = {};
         const elements = document.querySelectorAll("input, select");
@@ -76,57 +68,31 @@ class DisplayManager {
             }
         }
 
-        return JSON.stringify(shoeInfo);
+        return shoeInfo;
     }
 
-
-    addShoe(e) {
+    async addShoe(e) {
         e.preventDefault()
-        const shoesIndex = document.querySelector("#shoes-container")
-        const inputs = Array.from(e.target.querySelectorAll('input'))
-        const brandOption = document.querySelector('#shoe-brand-name').value
-        const [model, size, color] = inputs.map(input => input.value)
-        const categoryOption = document.querySelector('#new-shoe-category').value
-        const shoeImage = document.querySelector('#new-shoe-image').value
-        
-        // create elements
-        const ul = document.createElement('ul')
-        const imgTag = document.createElement('img')
-        const brandLi = document.createElement('li')
-        const modelLi = document.createElement('li')
-        const sizeLi = document.createElement('li')
-        const colorLi = document.createElement('li')
-        const categoryLi = document.createElement('li')
-        const deleteBtn = document.createElement('button')
-
-        // add content
-        deleteBtn.textContent = 'Delete'
-        deleteBtn.className = 'delete'
-        imgTag.src = shoeImage
-        brandLi.textContent = brandOption
-        modelLi.textContent = model
-        sizeLi.textContent = size
-        colorLi.textContent = color
-        categoryLi.textContent = categoryOption
-
-        // append to document
-        ul.appendChild(imgTag)
-        ul.appendChild(brandLi)
-        ul.appendChild(modelLi)
-        ul.appendChild(sizeLi)
-        ul.appendChild(colorLi)
-        ul.appendChild(categoryLi)
-        ul.appendChild(deleteBtn)
-        shoesIndex.appendChild(ul)
        
         // Create a new Shoe() from the form info
-        const shoeJson = toJSONString()
+        const shoeJson = this.toJSONString()
         const newShoe = new Shoe(shoeJson)
-
-        ShoeAdapter.newShoe(newShoe)
-        this.shoes.push(newShoe)
+      console.log(newShoe)
+        // add the shoe in the shoes array
+         this.shoes.push(newShoe)
+        // render shoes to display
         this.renderShoes()
+        // POST request to API
+        try {
+            const shoe = await Shoe.createNewShoe(shoeJson)
+            newShoe.id = shoe.id
+            newShoe.brand_id = shoe.brand_id
+        }catch(err) {
+            this.shoes = this.shoes.filter(shoe => shoe.id)
+            alert(err)
+            this.renderShoes()
+        }
+        
     }
-
     
 }

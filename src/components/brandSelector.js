@@ -2,7 +2,7 @@ class BrandSelector {
     constructor() {
         this.brands = []
         this.bindingsAndEventListeners()
-        this.fetchAndLoadBrands()
+        
         this.selectedBrand = null
     }
 
@@ -45,16 +45,7 @@ class BrandSelector {
       
     }
 
-    async fetchAndLoadBrands() {
-        
-        try {
-            this.brands = await Brand.retrieveAll()
-            this.render()
-        }catch(err) {
-            alert(err)
-        }
-        
-    }
+   
 
     render() {
         this.allBrandsContainer.innerHTML = this.brands.map(brand => brand.html).join('')

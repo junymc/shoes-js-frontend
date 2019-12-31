@@ -17,9 +17,9 @@ class ShoeAdapter {
         return `${this.brandURL(brand_id)}/shoes`
     }
 
-    get hearder() {
+    get headers() {
         const stdHeader = {
-            'Content-Type': 'appliaction/json',
+            'Content-Type': 'application/json',
             'Accept': 'application/json'
         }
         return stdHeader
@@ -41,17 +41,17 @@ class ShoeAdapter {
     async newShoe(params) {
 
         try {
-            const res = await fetch(this.shoesURL,{
+            const res = await fetch(this.shoesURL(params.brand_id),{
                 method: 'POST',
                 headers: this.headers,
-                body: JSON.stringify(params)
+                body: JSON.stringify({shoe: params})
             })
             this.checkStatus(res)
             return await res.json()
         }catch(err) {
            alert(err)
         }
-        
+
     }
 
     checkStatus(res) {
