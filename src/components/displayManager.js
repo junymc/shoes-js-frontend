@@ -26,14 +26,8 @@ class DisplayManager {
 
     renderShoes() {
         const shoesIndex = document.querySelector("#shoes-container")
-        const brandName = document.createElement('h2')
-        if(this.selectedBrand){
-           const t = document.createTextNode(this.selectedBrand.name)
-           brandName.appendChild(t)
-        }
         console.log(this.shoes)
         shoesIndex.innerHTML = this.shoes.map(shoe => shoe.shoesHtml).join('')
-
     }
 
     clearShoes(){
@@ -43,17 +37,15 @@ class DisplayManager {
     }
 
     bindingsAndEventListeners() {
-        
         this.shoeForm = document.getElementById('new-shoe-form')
         this.shoeForm.addEventListener('submit', this.addShoe.bind(this))
-
 
         // this.deleteBtns = document.querySelectorAll('.delete')
         // Array.from(this.deleteBtns).forEach(function(btn){
         //     btn.addEventListener('click', this.deleteShoe.bind(this))
         // })
-        
     }
+
     // get the info from form and convert it to object format
     toJSONString() {
         const shoeInfo = {};
@@ -67,17 +59,15 @@ class DisplayManager {
                 shoeInfo[name] = value;
             }
         }
-
         return shoeInfo;
     }
 
     async addShoe(e) {
         e.preventDefault()
        
-        // Create a new Shoe() from the form info
         const shoeJson = this.toJSONString()
+        // Create a new Shoe() from the form info
         const newShoe = new Shoe(shoeJson)
-      console.log(newShoe)
         // add the shoe in the shoes array
          this.shoes.push(newShoe)
         // render shoes to display
@@ -91,8 +81,7 @@ class DisplayManager {
             this.shoes = this.shoes.filter(shoe => shoe.id)
             alert(err)
             this.renderShoes()
-        }
-        
+        }   
     }
     
 }

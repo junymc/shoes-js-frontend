@@ -1,11 +1,9 @@
 class BrandSelector {
     constructor() {
         this.brands = []
-        this.bindingsAndEventListeners()
-        
+        this.bindingsAndEventListeners()       
         this.selectedBrand = null
     }
-
 
     bindingsAndEventListeners() {
         this.container = document.querySelector('#brand-container')
@@ -44,11 +42,10 @@ class BrandSelector {
         }
       
     }
-
    
-
+    //rendering all the brands logo images 
     render() {
-        this.allBrandsContainer.innerHTML = this.brands.map(brand => brand.html).join('')
+        this.allBrandsContainer.innerHTML = this.brands.map(brand => brand.imageHTML).join('')
     }
 
 

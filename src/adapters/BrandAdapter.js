@@ -13,7 +13,7 @@ class BrandAdapter {
             return `${this.brandsURL}/${id}`
         }
 
-        get hearder() {
+        get headers() {
             const stdHeader = {
                 'Content-Type': 'appliaction/json',
                 'Accept': 'application/json'

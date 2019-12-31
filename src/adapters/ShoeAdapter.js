@@ -32,12 +32,6 @@ class ShoeAdapter {
         return await res.json()
     }
 
-    // async getshoe(id) {
-    //     const res = await fetch(this.shoeURL(id))
-    //     this.checkStatus(res)
-    //     return await res.json()
-    // }
-
     async newShoe(params) {
 
         try {

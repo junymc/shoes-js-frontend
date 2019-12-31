@@ -18,14 +18,11 @@ class Shoe {
         }catch(err){
             throw {error: err}
         }
-
     }
 
     static async createNewShoe(params) {
-
         const shoeObj = await new ShoeAdapter().newShoe(params)
         return shoeObj
-       
     }
 
     bindingsAndEventListeners() {
