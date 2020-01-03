@@ -23,8 +23,13 @@ class Shoe {
         return shoeObj
     }
 
+    static async deleteShoe(params) {
+        const shoe = await new ShoeAdapter().deleteShoe(params)
+        return shoe
+    }
+
     get shoesHtml() {
-        return `<ul>
+        return `<ul data-id=${this.id}>
                    <img src="${this.image}" width="250" height="300">
                    <li> Model: ${this.model} </li>
                    <li> Size: ${this.size} </li>

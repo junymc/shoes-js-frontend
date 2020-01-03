@@ -86,11 +86,30 @@ class DisplayManager {
         this.deleteBtns = document.querySelectorAll('#shoes-container .delete')
         Array.from(this.deleteBtns).forEach(function(btn){
             btn.addEventListener('click', (e) => {
-                console.log(e.target.parentElement)
+                e.preventDefault()
+                // grab the shoe that user wants to delete
                 const ul = e.target.parentElement
+                // find id of the shoe
+                const id = ul.dataset.id
+                // remove the shoe from display
                 ul.parentNode.removeChild(ul)
+                // remove the shoe from shoes array
+                // const updatedShoes = this.shoes.filter(shoe => {
+                //     return shoe.Id != id;
+                //   })
+
+                // DELETE request to API
+                // try {
+                    // const removeShoe = Shoe.deleteShoe(id)
+                // }catch(err) {
+                //     alert(err)
+                //     this.renderShoes()
+                //     }
+        
             })
+
         })
+
     }
-    
+
 }

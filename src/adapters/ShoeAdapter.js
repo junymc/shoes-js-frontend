@@ -58,7 +58,7 @@ class ShoeAdapter {
             const res = await fetch(this.shoeURL(params.brand_id, params.id),{
                 method: 'DELETE',
                 headers: this.headers,
-                body: JSON.stringify({shoes: params})
+                body: JSON.stringify({shoe: params})
             })
             this.checkStatus(res)
             return await res.json()
