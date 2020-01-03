@@ -31,10 +31,10 @@ class Shoe {
     get shoesHtml() {
         return `<ul data-id=${this.id}>
                    <img src="${this.image}" width="250" height="300">
-                   <li> Model: ${this.model} </li>
-                   <li> Size: ${this.size} </li>
-                   <li> Color: ${this.color} </li>
-                   <li> Category: ${this.category} </li>
+                   <p> Model: ${this.model} </p>
+                   <p> Size: ${this.size} </p>
+                   <p> Color: ${this.color} </p>
+                   <p> Category: ${this.category} </p>
                    <button type="submit" class="delete">Delete</button>
                 </ul>`
     }
