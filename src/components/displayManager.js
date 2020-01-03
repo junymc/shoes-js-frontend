@@ -83,8 +83,8 @@ class DisplayManager {
     }
 
     deleteShoeEventListener() {
-        this.deleteBtns = document.querySelectorAll('#shoes-container .delete')
-        Array.from(this.deleteBtns).forEach(function(btn){
+        const deleteBtns = document.querySelectorAll('#shoes-container .delete')
+        for(let btn of deleteBtns) {
             btn.addEventListener('click', (e) => {
                 e.preventDefault()
                 // grab the shoe that user wants to delete
@@ -94,22 +94,23 @@ class DisplayManager {
                 // remove the shoe from display
                 ul.parentNode.removeChild(ul)
                 // remove the shoe from shoes array
-                // const updatedShoes = this.shoes.filter(shoe => {
-                //     return shoe.Id != id;
-                //   })
+                const updatedShoes = this.shoes.filter(shoe => {
+                    return shoe.id != id;
+                  })
+                this.shoes = updatedShoes
+                console.log(this.shoes)
 
                 // DELETE request to API
-                // try {
-                    // const removeShoe = Shoe.deleteShoe(id)
-                // }catch(err) {
-                //     alert(err)
-                //     this.renderShoes()
-                //     }
+                try {
+                    const removeShoe = Shoe.deleteShoe(id)
+                }catch(err) {
+                    alert(err)
+                    this.renderShoes()
+                    }
         
             })
 
-        })
-
+        }
     }
 
 }
