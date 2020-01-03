@@ -90,19 +90,22 @@ class DisplayManager {
                 // grab the shoe that user wants to delete
                 const ul = e.target.parentElement
                 // find id of the shoe
-                const id = ul.dataset.id
+                const shoeId = ul.dataset.id
+                // find the shoe object
+                const theShoe = this.shoes.find(shoe => shoe.id == shoeId)
+
                 // remove the shoe from display
                 ul.parentNode.removeChild(ul)
                 // remove the shoe from shoes array
                 const updatedShoes = this.shoes.filter(shoe => {
-                    return shoe.id != id;
+                    return shoe.id != shoeId;
                   })
                 this.shoes = updatedShoes
-                console.log(this.shoes)
+                
 
                 // DELETE request to API
                 try {
-                    const removeShoe = Shoe.deleteShoe(id)
+                    const removeShoe = Shoe.deleteShoe(theShoe)
                 }catch(err) {
                     alert(err)
                     this.renderShoes()
