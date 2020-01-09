@@ -1,4 +1,4 @@
-# shoes-js-frontend
+# shoe Collection
 This project is a simple app for tracking all the shoes that I have in my shoe closet. Eventually, I would love to add a user login/logoff feature so that other people can add comments or I can add a shopping cart if there are some shoes for sale. However, for now this is an app simply for tracking my own personal collection.
 
 ## Objectives

@@ -1,4 +1,5 @@
 class BrandSelector {
+    
     constructor() {
         this.brands = []
         this.bindingsAndEventListeners()       
@@ -21,8 +22,8 @@ class BrandSelector {
             const selection = this.brands.find(brand => brand.id === id)
             //if the image was selected already and click it again, set it back to original and set it to null
             if(selection === this.selectedBrand){
-                    e.target.style.border = ""
-                    this.selectedBrand = null
+                e.target.style.border = ""
+                this.selectedBrand = null
             }else if(this.selectedBrand !== null){
                 // find the img that is corrently selected
                 const selectedImg = Array.from(this.allBrandsContainer.children).find(img => {

@@ -1,6 +1,5 @@
 class ShoeAdapter {
 
-
     get baseURL() {
         return  `http://localhost:3000/api/v1`
     }

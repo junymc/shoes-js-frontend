@@ -1,4 +1,5 @@
 class App {
+    
     constructor(container) {
         this.container = container
         this.brandSelector = new BrandSelector()

@@ -1,4 +1,5 @@
 class Shoe {
+    
     constructor(params) {
         this.id = params.id
         this.model = params.model
