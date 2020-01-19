@@ -7,6 +7,7 @@ class Shoe {
         this.color = params.color
         this.category = params.category
         this.image = params.image
+        this.rating = params.rating
         this.brand_id = params.brand_id
     }
 
@@ -36,6 +37,7 @@ class Shoe {
                    <p> Size: ${this.size} </p>
                    <p> Color: ${this.color} </p>
                    <p> Category: ${this.category} </p>
+                   <p> Rating: ${this.rating} </p>
                    <button type="submit" class="delete">Delete</button>
                 </ul>`
     }
